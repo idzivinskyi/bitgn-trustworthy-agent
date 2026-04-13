@@ -1,0 +1,10 @@
+.venv/
+node_modules/
+runs/
+dist/
+pnpm-lock.yaml
+.env
+coverage/
+plans/**/*.log
+.DS_Store
+__pycache__/

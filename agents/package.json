@@ -1,0 +1,24 @@
+{
+  "name": "bitgn-agents",
+  "version": "0.2.0",
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/main.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.80.0",
+    "@buf/bitgn_api.bufbuild_es": "2.11.0-20260406122204-3f9b20076359.1",
+    "@bufbuild/protobuf": "^2.11.0",
+    "@connectrpc/connect": "^2.1.1",
+    "commander": "^13.0",
+    "pino": "^9.0.0",
+    "pino-pretty": "^13.0.0",
+    "tsx": "^4.19",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7"
+  }
+}

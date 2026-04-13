@@ -1,0 +1,16 @@
+[project]
+name = "bitgn-workspace"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = [
+    "bitgn-api-connectrpc-python==0.9.0.1.20260405144405+6b39e6872349",
+    "bitgn-api-protocolbuffers-python==34.1.0.1.20260405144405+6b39e6872349",
+    "pyyaml>=6.0",
+    "python-dateutil>=2.9",
+]
+
+[[tool.uv.index]]
+url = "https://buf.build/gen/python"
+
+[tool.uv]
+package = false
