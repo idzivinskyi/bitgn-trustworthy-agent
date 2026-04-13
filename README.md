@@ -57,7 +57,7 @@ Target call structure: **2–3 execute_code calls** per task (call 1 = all reads
 ```mermaid
 flowchart LR
     subgraph Docker["Docker container"]
-        TS["TypeScript orchestrator\n(Anthropic SDK)"]
+        TS["TypeScript Agent"]
         PY["Python execute_code\n(scratchpad + gates + verify)"]
         WS["Python REST client\n(workspace.py)"]
 
