@@ -45,7 +45,7 @@ This builds the Docker image and runs the agent with 40 concurrent tasks, submit
 
 Programmatic agent — no orchestration framework, no multi-agent setup.
 
-- **TypeScript agent** (`agents/`) — Main agent.
+- **TypeScript agent** (`agents/`) — Agent implementation.
 - **Single tool: `execute_code`** — Claude's only tool. Each invocation runs a Python snippet inside the container with a preloaded workspace client.
 - **Python REST client** (`python/workspace.py`) — thin wrapper over Connect-RPC (HTTP) stubs. Provides `ws.read()`, `ws.write()`, `ws.search()`, `ws.find()`, `ws.answer()`, etc. against the remote workspace.
 - **Scratchpad** — JSON dict persisted across `execute_code` calls. Acts as working memory: task classification, accumulated data, gate results, final answer.
