@@ -3,15 +3,9 @@
 // Source: https://docs.anthropic.com/en/docs/about-claude/pricing
 
 const MODEL_PRICING: Record<string, { input: number; output: number }> = {
-  "claude-opus-4-6":        { input: 5,    output: 25 },
-  "claude-opus-4-5":        { input: 5,    output: 25 },
-  "claude-opus-4-1":        { input: 15,   output: 75 },
-  "claude-opus-4":          { input: 15,   output: 75 },
-  "claude-sonnet-4-6":      { input: 3,    output: 15 },
-  "claude-sonnet-4-5":      { input: 3,    output: 15 },
-  "claude-sonnet-4":        { input: 3,    output: 15 },
-  "claude-haiku-4-5":       { input: 1,    output: 5 },
-  "claude-haiku-3-5":       { input: 0.80, output: 4 },
+  "claude-opus-4-6":        { input: 5,  output: 25 },
+  "claude-sonnet-4-6":      { input: 3,  output: 15 },
+  "claude-haiku-4-5":       { input: 1,  output: 5 },
 };
 
 export function getModelPricing(model: string): { input: number; output: number } {
@@ -35,10 +29,10 @@ export function calculateCost(
   const M = 1_000_000;
   // API returns input_tokens as non-cached tokens only; cache fields are additive.
   const cost =
-    (inputTokens / M) * pricing.input +
-    (cacheReadTokens / M) * pricing.input * 0.1 +
-    (cacheCreateTokens / M) * pricing.input * 1.25 +
-    (outputTokens / M) * pricing.output;
+    (inputTokens * pricing.input / M) +
+    (cacheReadTokens * pricing.input / M) * 0.1 +
+    (cacheCreateTokens * pricing.input / M) * 1.25 +
+    (outputTokens * pricing.output / M);
   return cost;
 }
 
