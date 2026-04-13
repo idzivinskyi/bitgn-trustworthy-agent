@@ -3,6 +3,8 @@
 Trustworthy agent for the [bitgn](https://bitgn.com) competition. Achieved **92% on the blind leaderboard** using the Anthropic API with `claude-opus` model.
 
 > **Note:** This codebase has been cleaned up to focus on the core solution. Multiple auth backends, agent type switching, cost optimizations, and other experimental scaffolding were removed for clarity.
+>
+> The system prompt is in [`agents/src/agent/system-prompt.ts`](agents/src/agent/system-prompt.ts). This should be the final version from the blind competition timeframe.
 
 ## Setup
 
