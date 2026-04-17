@@ -6,5 +6,6 @@ pnpm-lock.yaml
 .env
 coverage/
 plans/**/*.log
+post/
 .DS_Store
 __pycache__/
